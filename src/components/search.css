@@ -1,0 +1,78 @@
+.form-wrapper {
+    padding: 1em 3.5em 0 2em;
+    display: grid;
+    grid-gap: 12px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'header header' 'where where' 'whereinput whereinput' 'checkin checkout' 'checkin-input checkout-input' 'guests guests' 'guestselection guestselection' '. button';
+    color: #484848;
+    font-family: 'Roboto', sans-serif;
+    grid-column-gap: 0;
+}
+
+input {
+    border: 1px solid rgba(198, 198, 198, 0.605);
+    border-radius: 2px;
+    padding: 12px 0;
+    width: 100%;
+    font-size: 14px;
+    text-indent: 10px;
+    align-items: start;
+    /* align items not working idk why */
+}
+
+h1 {
+    grid-area: header;
+}
+
+h3.where {
+    grid-area: where;
+    font-size: .85em;
+}
+
+form.where-input {
+    grid-area: whereinput;
+}
+
+span.checkin {
+    grid-area: checkin;
+    font-size: .85em;
+}
+
+span.checkout {
+    grid-area: checkout;
+    font-size: .85em;
+}
+
+input.checkin-input {
+    grid-area: checkin-input;
+}
+
+input.checkout-input {
+    grid-area: checkout-input;
+}
+
+h3.guests {
+    grid-area: guests;
+    font-size: .85em;
+}
+
+input.guest-selection {
+    grid-area: guestselection;
+}
+
+button {
+    grid-area: button;
+}
+
+.searchbtn {
+    font-size: 16px;
+    line-height: 30px;
+    background: #FF5A5F;
+    color: white;
+    border-radius: 5px;
+    width: 75%;
+    justify-self: end;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
