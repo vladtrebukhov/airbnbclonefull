@@ -5,7 +5,12 @@ import Navigation from "./components/navigation.js";
 import Search from "./components/search.js";
 
 class App extends Component {
-  state = {};
+  constructor(props) {
+    super(props);
+    this.state = {
+      search: []
+    };
+  }
 
   render() {
     return (
