@@ -2,15 +2,21 @@ import React from "react";
 import "./search.css";
 
 class Search extends React.Component {
-  createInput = event => {
+  constructor() {
+    super();
+    this.goToResults = this.goToResults.bind(this);
+  }
+
+  goToResults(event) {
     event.preventDefault();
+    this.context.history.pushState(null, "/search");
     const input = {
       location: this.location.value,
       checkin: this.checkin.value,
       checkout: this.checkout.value,
       guests: this.guests.value
     };
-  };
+  }
 
   render() {
     let title = "Book unique homes and experiences.";
@@ -49,7 +55,7 @@ class Search extends React.Component {
         />
 
         <button
-          onClick={event => this.createInput(event)}
+          onClick={event => this.goToResults(event)}
           className="searchbtn"
         >
           Search
@@ -58,5 +64,9 @@ class Search extends React.Component {
     );
   }
 }
+
+Search.contextTypes = {
+  history: RouterPropTypes.history
+};
 
 export default Search;
